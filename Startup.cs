@@ -26,7 +26,7 @@ namespace MyAPI
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MyAPIConnection")));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseInMemoryDatabase("database"));
             services.AddScoped<ApplicationDbContext, ApplicationDbContext>();
             services.AddControllers();
         }
